@@ -6,7 +6,7 @@ import type { RootState } from "./store/store";
 import Create from "./pages/Create";
 import MyFormsPage from "./pages/MyFormsPage";
 import FormPreview from "./components/FormPreview";
-import Layout from "./components/Layout";
+
 
 const PreviewWrapper: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -16,14 +16,13 @@ const PreviewWrapper: React.FC = () => {
 };
 
 const AppRoutes = () => (
- <Layout>
+
    <Routes>
     <Route path="/" element={<Create />} />
     <Route path="/create" element={<Create />} />
     <Route path="/myforms" element={<MyFormsPage />} />
     <Route path="/preview/:id" element={<PreviewWrapper />} />
   </Routes>
- </Layout>
 );
 
 const App: React.FC = () => {
